@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - Tableau de Bord Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="dashboard.html" class="logo">
+          <img src="../assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li>
+              <a href="dashboard.html" class="nav-link active">Dashboard</a>
+            </li>
+            <li>
+              <a href="users.html" class="nav-link">Gérer Utilisateurs</a>
+            </li>
+            <li>
+              <a href="#" id="adminLogoutBtn" class="nav-link btn btn-secondary"
+                >Déconnexion</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="admin-dashboard" class="page-section">
+        <div class="container">
+          <h1 class="section-title text-center">
+            Tableau de Bord Administrateur
+          </h1>
+          <p class="section-subtitle text-center">
+            Vue d'ensemble et accès rapide aux fonctionnalités d'administration.
+          </p>
+
+          <div class="dashboard-cards-grid">
+            <div class="dashboard-card">
+              <h3><i data-feather="users"></i> Utilisateurs Enregistrés</h3>
+              <p class="card-metric" id="totalUsersCount">0</p>
+              <a href="users.html" class="btn btn-primary btn-small"
+                >Gérer les utilisateurs</a
+              >
+            </div>
+            <div class="dashboard-card">
+              <h3><i data-feather="user-plus"></i> Inscriptions en Attente</h3>
+              <p class="card-metric" id="pendingUsersCount">0</p>
+              <a
+                href="users.html?status=pending"
+                class="btn btn-secondary btn-small"
+                >Voir les attentes</a
+              >
+            </div>
+            <div class="dashboard-card">
+              <h3><i data-feather="book-open"></i> Formations</h3>
+              <p class="card-metric" id="totalCoursesCount">0</p>
+              <a href="#" class="btn btn-primary btn-small"
+                >Gérer les formations</a
+              >
+            </div>
+            <div class="dashboard-card">
+              <div class="card-icon"><i data-feather="book-open"></i></div>
+              <h3>Formations Disponibles</h3>
+              <p class="card-number" id="totalCoursesCount">0</p>
+            </div>
+            <div class="dashboard-card">
+              <h3><i data-feather="message-square"></i> Messages Reçus</h3>
+              <p class="card-metric" id="totalMessagesCount">0</p>
+              <a href="#" class="btn btn-secondary btn-small"
+                >Voir les messages</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Panneau d'administration.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Admin</h3>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="users.html">Gérer Utilisateurs</a></li>
+              <li><a href="#">Gérer Formations</a></li>
+              <li><a href="#">Voir Messages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Support</h3>
+            <p>Email: admin@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      // Active Feather Icons après le chargement du DOM
+      feather.replace();
+    </script>
+  </body>
+</html>

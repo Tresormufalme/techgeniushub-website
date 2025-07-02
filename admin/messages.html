@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - Voir Messages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="dashboard.html" class="logo">
+          <img src="../assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li>
+              <a href="users.html" class="nav-link">Gérer Utilisateurs</a>
+            </li>
+            <li>
+              <a href="courses.html" class="nav-link">Gérer Formations</a>
+            </li>
+            <li>
+              <a href="messages.html" class="nav-link active">Voir Messages</a>
+            </li>
+            <li>
+              <a href="#" id="adminLogoutBtn" class="nav-link btn btn-secondary"
+                >Déconnexion</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="admin-messages" class="page-section">
+        <div class="container">
+          <h1 class="section-title text-center">Messages Reçus</h1>
+          <p class="section-subtitle text-center">
+            Consultez les messages envoyés via le formulaire de contact.
+          </p>
+
+          <div class="messages-panel">
+            <div class="table-responsive">
+              <table class="messages-table">
+                <thead>
+                  <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Sujet</th>
+                    <th>Message</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="messagesTableBody">
+                  <tr>
+                    <td colspan="6">Chargement des messages...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="messagesPagination" class="pagination"></div>
+            <div
+              id="noMessagesFound"
+              class="form-message error"
+              style="display: none"
+            >
+              Aucun message trouvé.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Panneau d'administration.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Admin</h3>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="users.html">Gérer Utilisateurs</a></li>
+              <li><a href="courses.html">Gérer Formations</a></li>
+              <li><a href="messages.html">Voir Messages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Support</h3>
+            <p>Email: admin@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

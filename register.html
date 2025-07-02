@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - Inscription</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="about.html" class="nav-link">À Propos</a></li>
+            <li><a href="team.html" class="nav-link">Équipe</a></li>
+            <li><a href="courses.html" class="nav-link">Formations</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="login.html" class="nav-link btn btn-primary"
+                >Connexion</a
+              >
+            </li>
+            <li>
+              <a href="register.html" class="nav-link btn btn-secondary active"
+                >Inscription</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="register" class="page-section auth-section bg-light">
+        <div class="container">
+          <h1 class="section-title text-center">
+            Créez Votre Compte TechGeniusHub
+          </h1>
+          <p class="section-subtitle text-center">
+            Rejoignez notre communauté pour accéder à des formations exclusives.
+          </p>
+
+          <div class="auth-card">
+            <form id="registrationForm">
+              <div class="form-group">
+                <label for="fullName">Nom Complet</label>
+                <input type="text" id="fullName" name="fullName" required />
+              </div>
+              <div class="form-group">
+                <label for="emailRegister">Email</label>
+                <input type="email" id="emailRegister" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="passwordRegister">Mot de Passe</label>
+                <input
+                  type="password"
+                  id="passwordRegister"
+                  name="password"
+                  required
+                  minlength="6"
+                />
+                <small class="form-text">Minimum 6 caractères.</small>
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirmer Mot de Passe</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  required
+                />
+              </div>
+              <input
+                type="hidden"
+                id="courseToEnroll"
+                name="courseToEnroll"
+                value=""
+              />
+              <button type="submit" class="btn btn-primary btn-block">
+                S'inscrire
+              </button>
+              <div id="registrationMessage" class="form-message mt-3"></div>
+            </form>
+            <p class="text-center mt-4">
+              Vous avez déjà un compte ?
+              <a href="login.html">Connectez-vous ici</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Votre partenaire pour l'excellence numérique en RDC.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="about.html">À Propos</a></li>
+              <li><a href="team.html">Équipe</a></li>
+              <li><a href="courses.html">Formations</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: info@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Active Feather Icons après le chargement du DOM
+      feather.replace();
+    </script>
+  </body>
+</html>

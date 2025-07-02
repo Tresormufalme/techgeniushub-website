@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - Gérer Formations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="dashboard.html" class="logo">
+          <img src="../assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li>
+              <a href="users.html" class="nav-link">Gérer Utilisateurs</a>
+            </li>
+            <li>
+              <a href="courses.html" class="nav-link active"
+                >Gérer Formations</a
+              >
+            </li>
+            <li><a href="messages.html" class="nav-link">Voir Messages</a></li>
+            <li>
+              <a href="#" id="adminLogoutBtn" class="nav-link btn btn-secondary"
+                >Déconnexion</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="admin-courses" class="page-section">
+        <div class="container">
+          <h1 class="section-title text-center">Gestion des Formations</h1>
+          <p class="section-subtitle text-center">
+            Ajoutez, modifiez ou supprimez les formations disponibles sur la
+            plateforme.
+          </p>
+
+          <div class="courses-management-panel">
+            <button class="btn btn-primary add-course-btn" id="addCourseBtn">
+              <i data-feather="plus-circle"></i> Ajouter une Nouvelle Formation
+            </button>
+
+            <div
+              id="courseFormContainer"
+              class="auth-card form-container"
+              style="display: none"
+            >
+              <h2 id="courseFormTitle">Ajouter une Formation</h2>
+              <form id="courseForm">
+                <input type="hidden" id="courseId" />
+
+                <div class="form-group">
+                  <label for="courseTitle">Titre de la Formation:</label>
+                  <input type="text" id="courseTitle" required />
+                </div>
+                <div class="form-group">
+                  <label for="courseDescription">Description:</label>
+                  <textarea id="courseDescription" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="courseInstructor">Instructeur:</label>
+                  <input type="text" id="courseInstructor" required />
+                </div>
+                <div class="form-group">
+                  <label for="coursePrice">Prix (USD):</label>
+                  <input
+                    type="number"
+                    id="coursePrice"
+                    step="0.01"
+                    min="0"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="courseDuration"
+                    >Durée (ex: 8 semaines, 40 heures):</label
+                  >
+                  <input type="text" id="courseDuration" required />
+                </div>
+                <div class="form-group">
+                  <label for="courseImage">URL de l'Image:</label>
+                  <input
+                    type="url"
+                    id="courseImage"
+                    placeholder="https://example.com/image.jpg"
+                  />
+                </div>
+
+                <div
+                  class="form-message"
+                  id="courseFormMessage"
+                  style="display: none"
+                ></div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="saveCourseBtn"
+                >
+                  Enregistrer la Formation
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="cancelCourseBtn"
+                >
+                  Annuler
+                </button>
+              </form>
+            </div>
+
+            <h3>Liste des Formations</h3>
+            <div class="filter-search-bar">
+              <input
+                type="text"
+                id="courseSearch"
+                placeholder="Rechercher par titre ou instructeur..."
+              />
+              <button class="btn btn-primary" id="applyCourseFilterBtn">
+                <i data-feather="search"></i> Rechercher
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="courses-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Titre</th>
+                    <th>Instructeur</th>
+                    <th>Prix</th>
+                    <th>Durée</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="coursesTableBody">
+                  <tr>
+                    <td colspan="6">Chargement des formations...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="coursesPagination" class="pagination"></div>
+            <div
+              id="noCoursesFound"
+              class="form-message error"
+              style="display: none"
+            >
+              Aucune formation trouvée avec les critères de recherche.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Panneau d'administration.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Admin</h3>
+            <ul>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="users.html">Gérer Utilisateurs</a></li>
+              <li><a href="courses.html">Gérer Formations</a></li>
+              <li><a href="messages.html">Voir Messages</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact Support</h3>
+            <p>Email: admin@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - Formations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="about.html" class="nav-link">À Propos</a></li>
+            <li><a href="team.html" class="nav-link">Équipe</a></li>
+            <li>
+              <a href="courses.html" class="nav-link active">Formations</a>
+            </li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="login.html" class="nav-link btn btn-primary"
+                >Connexion</a
+              >
+            </li>
+            <li>
+              <a href="register.html" class="nav-link btn btn-secondary"
+                >Inscription</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="courses" class="page-section">
+        <div class="container">
+          <h1 class="section-title text-center">Nos Formations Innovantes</h1>
+          <p class="section-subtitle text-center">
+            Développez des compétences clés pour le marché de l'emploi
+            numérique.
+          </p>
+
+          <div class="course-grid">
+            <div class="course-card">
+              <img
+                src="assets/img/course-backend.jpg"
+                alt="Image Formation Backend"
+                class="course-image"
+              />
+              <div class="course-info">
+                <h3 class="course-title">Développement Backend Partie 1</h3>
+                <p class="course-description">
+                  Apprenez les bases solides du développement côté serveur, avec
+                  PHP et MySQL. Idéal pour les débutants.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration"
+                    ><i data-feather="clock"></i> 1 Mois</span
+                  >
+                  <span class="course-price"
+                    ><i data-feather="dollar-sign"></i> 10$</span
+                  >
+                </div>
+                <a
+                  href="register.html?course=backend"
+                  class="btn btn-primary btn-small"
+                  >S'inscrire <i data-feather="arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <img
+                src="assets/img/course-excel.jpg"
+                alt="Image Formation Excel"
+                class="course-image"
+              />
+              <div class="course-info">
+                <h3 class="course-title">
+                  Maîtrise d'Excel pour l'Analyse de Données
+                </h3>
+                <p class="course-description">
+                  Devenez un expert en manipulation et analyse de données avec
+                  Excel. Indispensable pour tout professionnel.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration"
+                    ><i data-feather="clock"></i> 1 Mois</span
+                  >
+                  <span class="course-price"
+                    ><i data-feather="dollar-sign"></i> 10$</span
+                  >
+                </div>
+                <a
+                  href="register.html?course=excel"
+                  class="btn btn-primary btn-small"
+                  >S'inscrire <i data-feather="arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <img
+                src="assets/img/course-webdesign.jpg"
+                alt="Image Formation Web Design"
+                class="course-image"
+              />
+              <div class="course-info">
+                <h3 class="course-title">Initiation au Web Design</h3>
+                <p class="course-description">
+                  Créez des interfaces utilisateur attrayantes et responsives
+                  avec HTML et CSS.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration"
+                    ><i data-feather="clock"></i> 2 Semaines</span
+                  >
+                  <span class="course-price"
+                    ><i data-feather="dollar-sign"></i> 8$</span
+                  >
+                </div>
+                <a
+                  href="register.html?course=webdesign"
+                  class="btn btn-primary btn-small"
+                  >S'inscrire <i data-feather="arrow-right"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="course-card">
+              <img
+                src="assets/img/course-android.jpg"
+                alt="Image Formation Android"
+                class="course-image"
+              />
+              <div class="course-info">
+                <h3 class="course-title">Développement Android Mobile</h3>
+                <p class="course-description">
+                  Plongez dans la création d'applications Android natives avec
+                  Java/Kotlin.
+                </p>
+                <div class="course-meta">
+                  <span class="course-duration"
+                    ><i data-feather="clock"></i> 2 Mois</span
+                  >
+                  <span class="course-price"
+                    ><i data-feather="dollar-sign"></i> 20$</span
+                  >
+                </div>
+                <a
+                  href="register.html?course=android"
+                  class="btn btn-primary btn-small"
+                  >S'inscrire <i data-feather="arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Votre partenaire pour l'excellence numérique en RDC.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="about.html">À Propos</a></li>
+              <li><a href="team.html">Équipe</a></li>
+              <li><a href="courses.html">Formations</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: info@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Active Feather Icons après le chargement du DOM
+      feather.replace();
+    </script>
+  </body>
+</html>

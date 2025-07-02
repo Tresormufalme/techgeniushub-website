@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechGeniusHub - À Propos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <style>
+      /* --- Base Styles & Resets (Copie du contenu de assets/css/style.css) --- */
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap");
+
+      :root {
+        --primary-color: #007bff;
+        --secondary-color: #28a745;
+        --accent-color: #6c757d;
+        --dark-color: #343a40;
+        --light-color: #f8f9fa;
+        --white-color: #ffffff;
+        --border-color: #e9ecef;
+
+        --font-heading: "Montserrat", sans-serif;
+        --font-body: "Open Sans", sans-serif;
+
+        --transition-speed: 0.3s;
+        --border-radius: 8px;
+        --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        line-height: 1.6;
+        color: var(--dark-color);
+        background-color: var(--light-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--primary-color);
+        transition: color var(--transition-speed) ease;
+      }
+
+      a:hover {
+        color: var(--dark-color);
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* --- Typography --- */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: var(--font-heading);
+        color: var(--dark-color);
+        margin-bottom: 0.5em;
+        line-height: 1.2;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+      h2 {
+        font-size: 2.5em;
+      }
+      h3 {
+        font-size: 2em;
+      }
+      h4 {
+        font-size: 1.5em;
+      }
+      p {
+        margin-bottom: 1em;
+      }
+
+      /* --- Buttons --- */
+      .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        text-align: center;
+        transition: all var(--transition-speed) ease;
+        cursor: pointer;
+        border: none;
+        font-family: var(--font-body);
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-light);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+        color: var(--white-color);
+      }
+
+      .btn-secondary:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-light);
+      }
+
+      .btn-large {
+        padding: 15px 30px;
+        font-size: 1.1em;
+      }
+
+      /* --- Header --- */
+      .header {
+        background-color: var(--white-color);
+        box-shadow: var(--shadow-light);
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 1.8em;
+        color: var(--dark-color);
+      }
+
+      .logo img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .main-nav .nav-list {
+        display: flex;
+        align-items: center;
+      }
+
+      .main-nav .nav-list li {
+        margin-left: 25px;
+      }
+
+      .main-nav .nav-link {
+        color: var(--dark-color);
+        font-weight: 600;
+        padding: 5px 0;
+        position: relative;
+        transition: color var(--transition-speed) ease;
+      }
+
+      .main-nav .nav-link:hover,
+      .main-nav .nav-link.active {
+        color: var(--primary-color);
+      }
+
+      .main-nav .nav-link.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        transform: scaleX(1);
+        transition: transform var(--transition-speed) ease;
+      }
+
+      /* Mobile Menu Toggle */
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        color: var(--dark-color);
+        font-size: 2em;
+      }
+
+      /* --- Hero Section (Pas utilisée dans About.html mais incluse pour complétude) --- */
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("assets/img/hero-bg.jpg") no-repeat center center/cover;
+        color: var(--white-color);
+        text-align: center;
+        padding: 150px 0 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-title {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-subtitle {
+        font-size: 1.4em;
+        margin-bottom: 40px;
+        opacity: 0.9;
+      }
+
+      /* --- Main Content Padding (for fixed header) --- */
+      .main-content {
+        padding-top: 80px;
+      }
+
+      /* --- Footer --- */
+      .footer {
+        background-color: var(--dark-color);
+        color: var(--light-color);
+        padding: 50px 0 20px;
+        font-size: 0.9em;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h3 {
+        color: var(--white-color);
+        margin-bottom: 20px;
+        font-size: 1.2em;
+      }
+
+      .footer-col p {
+        margin-bottom: 10px;
+        color: var(--accent-color);
+      }
+
+      .footer-col ul {
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 8px;
+      }
+
+      .footer-col ul li a {
+        color: var(--accent-color);
+        transition: color var(--transition-speed) ease;
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      .social-links a {
+        color: var(--light-color);
+        font-size: 1.5em;
+        margin-right: 15px;
+        transition: color var(--transition-speed) ease;
+      }
+
+      .social-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--accent-color);
+      }
+
+      /* --- Sections de Pages Générales (pour About, Contact, Register, Login) --- */
+      .page-section {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .page-section.bg-light {
+        background-color: var(--light-color);
+      }
+
+      .section-title {
+        font-size: 2.8em;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-color);
+        border-radius: 2px;
+      }
+
+      .section-subtitle {
+        font-size: 1.2em;
+        color: var(--accent-color);
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Style spécifique pour la page About */
+      .about-content {
+        text-align: left;
+        max-width: 900px;
+        margin: 0 auto;
+        font-size: 1.1em;
+        line-height: 1.8;
+      }
+
+      .about-content p {
+        margin-bottom: 1.5em;
+        color: var(--dark-color);
+      }
+
+      /* --- Media Queries for Responsiveness --- */
+      @media (max-width: 768px) {
+        .header .container {
+          flex-wrap: wrap;
+        }
+
+        .main-nav {
+          width: 100%;
+          order: 3;
+          margin-top: 15px;
+        }
+
+        .main-nav .nav-list {
+          flex-direction: column;
+          width: 100%;
+          display: none;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-in-out;
+        }
+
+        .main-nav .nav-list.active {
+          display: flex;
+          max-height: 300px;
+        }
+
+        .main-nav .nav-list li {
+          margin: 10px 0;
+          width: 100%;
+          text-align: center;
+        }
+
+        .main-nav .nav-link.btn {
+          margin-top: 10px;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .hero-title {
+          font-size: 2.5em;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1em;
+        }
+
+        .page-section {
+          padding: 60px 0;
+        }
+
+        .section-title {
+          font-size: 2em;
+        }
+
+        .section-subtitle {
+          font-size: 1em;
+        }
+
+        .about-content {
+          font-size: 1em;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-col {
+          margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .footer-col ul li {
+          margin: 0;
+        }
+
+        .social-links {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="assets/img/logo.png" alt="Logo TechGeniusHub" />
+          TechGeniusHub
+        </a>
+        <nav class="main-nav">
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="about.html" class="nav-link active">À Propos</a></li>
+            <li><a href="team.html" class="nav-link">Équipe</a></li>
+            <li><a href="courses.html" class="nav-link">Formations</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="login.html" class="nav-link btn btn-primary"
+                >Connexion</a
+              >
+            </li>
+            <li>
+              <a href="register.html" class="nav-link btn btn-secondary"
+                >Inscription</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="about" class="page-section">
+        <div class="container">
+          <h1 class="section-title text-center">À Propos de TechGeniusHub</h1>
+          <div class="about-content">
+            <p>
+              Fondée à Bukavu, RDC, TechGeniusHub est une initiative passionnée
+              dédiée à l'autonomisation des individus par l'éducation numérique.
+              Notre vision est de créer un pôle d'excellence technologique,
+              formant la prochaine génération d'innovateurs, de développeurs et
+              de professionnels du numérique en Afrique centrale.
+            </p>
+            <p>
+              Nous croyons fermement que l'accès à une éducation technologique
+              de qualité est un moteur puissant de développement économique et
+              social. Nos programmes sont conçus pour être pratiques, pertinents
+              et accessibles, afin que chacun puisse acquérir les compétences
+              nécessaires pour prospérer dans l'économie numérique mondiale.
+            </p>
+            <p>
+              Chez TechGeniusHub, nous nous engageons à offrir un environnement
+              d'apprentissage stimulant, avec des formateurs experts et une
+              communauté solidaire. Rejoignez-nous pour transformer votre avenir
+              et contribuer à l'essor technologique de notre région.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>TechGeniusHub</h3>
+            <p>Votre partenaire pour l'excellence numérique en RDC.</p>
+            <div class="social-links">
+              <a href="#"><i data-feather="twitter"></i></a>
+              <a href="#"><i data-feather="linkedin"></i></a>
+              <a href="#"><i data-feather="facebook"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="about.html">À Propos</a></li>
+              <li><a href="team.html">Équipe</a></li>
+              <li><a href="courses.html">Formations</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: info@techgeniushub.com</p>
+            <p>Téléphone: +243 xx xxx xxxx</p>
+            <p>Adresse: Bukavu, RDC</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 TechGeniusHub. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Active Feather Icons après le chargement du DOM
+      feather.replace();
+    </script>
+  </body>
+</html>
